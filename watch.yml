@@ -1,0 +1,6 @@
+spring:
+  applicatioin:
+    name: watch
+    
+server:
+  port: 9742
