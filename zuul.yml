@@ -1,0 +1,23 @@
+spring:
+  applicaiton:
+    name: zuul 
+    
+    
+server:
+  port: 9999
+
+
+zuul:
+  routes:
+    #logical name for a service
+    movies:
+      path: /moives
+      # if no discovery, we have know where apps are running
+      # url: http://localhost:8080/
+      
+      # if you have  discovery, Zuul asks Eureka for the URL
+      service-id: movies # lines up with spring.applicaiton.name
+    
+      # remove whatever zuul.routes.movies.path says from URL
+      # /movies/api/v1.0/ -> /api/v1.0
+      strip-prefix: true    # true by default
